@@ -7,7 +7,8 @@ BetTracker is a Python-based command-line application for tracking your sports b
 3. [How to start with the code](#Howtostartwiththecode)
 4. [Installation](#Installation)
 5. [Authors](#Authors)
-6. [License](#License)
+6. [Resources](#Resources)
+7. [License](#License)
 
 ## 1. Objective
 
@@ -70,15 +71,19 @@ Now, follow this steps to run it in google collab.
   Step 4: You will see on my drive page the download and you click on it.
   Step 5: Now you should be already on google collab placing your bets.
 
-  ## 5. Authors
+  ## 5. Authors and contact
 
-  Angel Benito
-  Eloy Sanchez
-  Santiago Llorca
-  Enrique Roca de Togores
-  Juan Diaz
+  Angel Benito  abenito.ieu2022@student.ie.edu
+  Eloy Sanchez  esanchez.ieu2022@student.ie.edu
+  Santiago Llorca  sllorca.ieu2022@student.ie.edu
+  Enrique Roca de Togores  erocadetogor.ieu2022@student.ie.edu
+  Juan Diaz  jdiazbernard.ieu2022@student.ie.edu
 
-  ## 6. License
+  ## 6. Resources
+  
+For the project we have used the knowledge obtained through the algorithms course in IE University coursed by Alejandro Martinez. And also Chatgpt has helped us fixing bugs.
+
+  ## 7. License
 Copyright (c) [2023] [BetTracker]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "BetTracker.py"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
