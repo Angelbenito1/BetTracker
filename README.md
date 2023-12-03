@@ -73,11 +73,11 @@ Now, follow this steps to run it in google collab.
 
   ## 5. Authors and contact
 
-  Angel Benito  abenito.ieu2022@student.ie.edu
-  Eloy Sanchez  esanchez.ieu2022@student.ie.edu
-  Santiago Llorca  sllorca.ieu2022@student.ie.edu
-  Enrique Roca de Togores  erocadetogor.ieu2022@student.ie.edu
-  Juan Diaz  jdiazbernard.ieu2022@student.ie.edu
+-   Angel Benito  abenito.ieu2022@student.ie.edu
+-   Eloy Sanchez  esanchez.ieu2022@student.ie.edu
+-   Santiago Llorca  sllorca.ieu2022@student.ie.edu
+-   Enrique Roca de Togores  erocadetogor.ieu2022@student.ie.edu
+-   Juan Diaz  jdiazbernard.ieu2022@student.ie.edu
 
   ## 6. Resources
   
