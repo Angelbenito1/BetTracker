@@ -2,7 +2,7 @@
 BetTracker is a Python-based command-line application for tracking your sports bets. It allows you to record your bets, calculate total spending, winnings, and analyze sports performance.
 
 # Table of Contents
-1. [Objective](#Objective)
+1. [1. Objective](#1. Objective)
 2. [Features](#Features)
 3. How to start with the code
 4. Installation
