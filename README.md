@@ -51,10 +51,11 @@ Files >> Desktop >> 'Right Click' >> New Folder >> type: 'BetTracker'
 
 Once you have created this folder, create a Pycharm environment in this folder. Follow the next steps to do it correctly.
 
-Step 1: Open PyCharm and create a 'New Project'
-Step 2: Change the project directory to the folder you previously created
-Step 3: Select the folder you created before as your PyCharm project directory
-Step 4: Create the project
+- Step 1: Open PyCharm and create a 'New Project'
+- Step 2: Change the project directory to the folder you previously created
+- Step 3: Select the folder you created before as your PyCharm project directory
+- Step 4: Create the project
+
 The next step is the final one. Open the 'BetTracker.py' file which is the one containing the program with PyCharm.
 Now, you will be able to start tracking your bets in your computer.
 
@@ -65,11 +66,11 @@ Download the ['BetTracker.ipynb'](BetTracker.ipynb) file from the 'main' directo
 After this, you will need to visit [Google Drive](https://www.google.com/drive/) and sign in.
 
 Now, follow this steps to run it in google collab.
-  Step 1: In my drive main page, notice that you are on My Drive tab and click the "+ New" button.
-  Step 2: Once you have pressed the button, you will see a new tab and you will need to press "File upload"
-  Step 3: Then the computer will open the documents page of your computer, you will need to select the ['BetTracker.ipynb'](BetTracker.ipynb) file and click on open.
-  Step 4: You will see on my drive page the download and you click on it.
-  Step 5: Now you should be already on google collab placing your bets.
+-   Step 1: In my drive main page, notice that you are on My Drive tab and click the "+ New" button.
+-   Step 2: Once you have pressed the button, you will see a new tab and you will need to press "File upload"
+-   Step 3: Then the computer will open the documents page of your computer, you will need to select the ['BetTracker.ipynb'](BetTracker.ipynb) file and click on open.
+-   Step 4: You will see on my drive page the download and you click on it.
+-   Step 5: Now you should be already on google collab placing your bets.
 
   ## 5. Authors and contact
 
