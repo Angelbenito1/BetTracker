@@ -1,0 +1,144 @@
+import heapq
+
+class BetTracker:
+    def __init__(self, monthly_limit, planned_bets_limit):
+        self.monthly_limit = monthly_limit
+        self.planned_bets_limit = planned_bets_limit
+        self.total_spending = 0
+        self.total_winnings = 0
+        self.sports_performance = {}
+
+    def quicksort_bets(self, bets):
+        if len(bets) <= 1:
+            return bets
+        pivot = bets[len(bets) // 2]
+        left = [x for x in bets if x['outcome'] == 'win' and x['odds'] < pivot['odds']]
+        middle = [x for x in bets if x['outcome'] == 'win' and x['odds'] == pivot['odds']]
+        right = [x for x in bets if x['outcome'] == 'win' and x['odds'] > pivot['odds']]
+        return self.quicksort_bets(left) + middle + self.quicksort_bets(right)
+
+    def overall_risk(self):
+        return (self.total_spending - self.total_winnings) / self.monthly_limit
+
+    def display_limits(self):
+        remaining_monthly_limit = self.monthly_limit - self.total_spending
+        print(f"Remaining Monthly Limit: ${remaining_monthly_limit}")
+        print(f"Planned Bets Limit: ${self.planned_bets_limit}")
+
+    def place_bet(self, planned_bet=None):
+        self.display_limits()
+
+        if planned_bet:
+            amount, odds, sport = planned_bet['amount'], planned_bet['odds'], planned_bet['sport']
+            outcome = 'win'  # Since it's a planned bet, the outcome is not known yet
+        else:
+            while True:
+                bet_input = input("Enter the bet information (amount, odds(with .), sport): ")
+                try:
+                    amount_str, odds_str, sport = map(str.strip, bet_input.split(','))
+
+                    # Check if amount and odds are valid numeric values
+                    if not amount_str.replace('.', '').isdigit() or not odds_str.replace('.', '').isdigit():
+                        print("Invalid input. Please enter valid numerical values for amount and odds.")
+                        continue
+
+                    amount = float(amount_str)
+                    odds = float(odds_str)
+                    break
+
+                except ValueError:
+                    print("Invalid input. Please enter valid numerical values for amount and odds.")
+
+            if self.total_spending + amount > self.monthly_limit:
+                print("Bet exceeds monthly limit. Please bet a smaller amount.")
+                return
+
+            risk_factor = odds / 2
+
+            winnings = amount * odds
+            self.total_winnings += winnings
+
+            self.total_spending += amount - risk_factor
+
+            outcome = input("Did you win or lose the bet (win/lose)? ")
+
+            if outcome == 'win':
+                self.total_winnings += winnings
+
+            if sport in self.sports_performance:
+                self.sports_performance[sport]['spending'] += amount - risk_factor
+                self.sports_performance[sport]['winnings'] += winnings
+                self.sports_performance[sport].setdefault('bets', []).append({
+                    'amount': amount - risk_factor,
+                    'odds': odds,
+                    'outcome': outcome,
+                    'sport': sport
+                })
+            else:
+                self.sports_performance[sport] = {
+                    'spending': amount - risk_factor,
+                    'winnings': winnings,
+                    'bets': [{
+                        'amount': amount - risk_factor,
+                        'odds': odds,
+                        'outcome': outcome,
+                        'sport': sport
+                    }]
+                }
+
+    def display_summary(self):
+        self.display_limits()
+
+        print("\nMonthly Summary:")
+        print("Total Spending: ${}".format(self.total_spending))
+        print("Total Winnings: ${}".format(self.total_winnings))
+        print("Overall Risk: {:.2%}".format(self.overall_risk()))
+
+        if self.sports_performance:
+            print("\nSports Performance:")
+            sorted_sports = sorted(self.sports_performance.items(), key=lambda x: x[1]['winnings'], reverse=True)
+
+            for sport, data in sorted_sports:
+                print("\nSport: {}, Spending: ${}, Winnings: ${}".format(sport, data['spending'], data['winnings']))
+
+                # Display bets sorted by odds
+                bets = data.get('bets', [])
+                if bets:
+                    sorted_bets = self.quicksort_bets(bets)
+                    print("Bets (Sorted by Odds):")
+                    for bet in sorted_bets:
+                        print("Bet {}: Amount=${}, Odds={}, Outcome={}".format(
+                            id(bet), bet['amount'], bet['odds'], bet['outcome']
+                        ))
+
+            max_winnings_sport = sorted_sports[0]
+            max_losses_sport = max(self.sports_performance.items(), key=lambda x: x[1]['spending'] - x[1]['winnings'])
+
+            print("\nSport with the Most Winnings: {}, Winnings: ${}".format(max_winnings_sport[0], max_winnings_sport[1]['winnings']))
+            print("Sport with the Most Losses: {}, Losses: ${}".format(max_losses_sport[0], max_losses_sport[1]['spending'] - max_losses_sport[1]['winnings']))
+
+        else:
+            print("\nNo betting history available.")
+
+# Example usage with a monthly limit of $1000 and planned bets limit of $500
+bet_tracker_with_graph = BetTracker(monthly_limit=1000, planned_bets_limit=500)
+
+while True:
+    action = input("Do you want to place a bet (1), place a planned bet (2), display summary (3), or quit (q)? ")
+
+    if action == '1':
+        bet_tracker_with_graph.place_bet()
+    elif action == '2':
+        planned_bet = {
+            'amount': float(input("Enter the planned bet amount: ")),
+            'odds': float(input("Enter the planned bet odds: ")),
+            'sport': input("Enter the planned bet sport: ")
+        }
+        bet_tracker_with_graph.place_bet(planned_bet)
+    elif action == '3':
+        bet_tracker_with_graph.display_summary()
+    elif action.lower() == 'q':
+        break
+    else:
+        print("Invalid option. Please enter '1' to place a bet, '2' to place a planned bet, '3' to display summary, or 'q' to quit.")
+
