@@ -46,6 +46,8 @@ The algorithm has established monthly limits of 1000 for already finished bets a
 
 ## 4. Example
 
+[Code-Review_-Consistency-_-Improvements](https://github.com/Angelbenito1/BetTracker/assets/152195160/3cacbeb1-6ad3-40a0-86e7-76beeabed761)
+
 
 
 ## 5. Installation 
