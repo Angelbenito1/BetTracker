@@ -1,40 +1,54 @@
 # BetTracker
-BetTracker is a Python-based command-line application for tracking your sports bets. It allows you to record your bets, calculate total spending, winnings, and analyze sports performance.
+The BetTracker is a simple Python program designed to help users keep track of their betting activities. The program allows users to manage monthly betting limits, place bets, plan future bets, and see a exhaustive summary of their performance.
 
 # Table of Contents
 1. [Objective](#Objective)
 2. [Features](#Features)
-3. [How to start with the code](#Howtostartwiththecode)
-4. [Installation](#Installation)
-5. [Authors](#Authors)
-6. [Resources](#Resources)
-7. [License](#License)
+3. [Usage](#Usage)
+4. [Example](#Example)
+5. [Installation](#Installation)
+6. [Authors](#Authors)
+7. [Resources](#Resources)
+8. [License](#License)
 
 ## 1. Objective
 
-
-The objective of this code it to have a better control on the money bet, also to see a summary to know in which sports do you win more or lose more.
+The objective of this code it to have a better control on the money bet, also to see a summary to know in which sports do you win more or lose more and have a control over your months limits.
 In short, the purpose is to have much greater control over our bets. 
 
 ## 2. Features
 
 - Place bets. Enter your bet details, including amount, odds, outcome, and sport.
+- Place planned bets, users can plan their bets in advance by specifying the amount, odds, and sport without determining the outcome initially.
+- Monthly Limit. The program keeps track of the user's monthly spending and ensures that the total spending remains within the defined monthly limit.
+- Risk Analysis. Provides an overall risk analysis based on the total spending and winnings.
 - Display Summary. View a summary of your total spending, total winnings, and sports performance.
 
-## 3. How to start with the code
+## 3. Usage
 
-At the time you run the code, the console will ask you the first action that will consist in three possible outputs. You should answer 1 if you want to place a bet, 2 if you want to display the summary, or q if you want to quit. This action will be asked for the user every time he places a bet.
+At the time you run the code, the console will ask you the first action that will consist in four possible outputs. You should answer 1 if you want to place a bet, 2 if you want to set a planned bet , 3 if you want to display the summary, or q if you want to quit. This action will be asked for the user every time he places a bet, also after answering the question the user will see its remaining limits.
 
 ### 3.1 If placing a bet
 
 If in the previous action you entered "1", you will be again asked by the console about the details of your bet, the amount, the oods, the outcome and the sport, in that order and you will have to answer them separated by a comma. To answer the amount and the odds, the format is with the dot for decimals, like this, 3.14, if you are going to add thousands, or even millions you mustn't use commas. And in the outcome you will have to answer win in the case that you have win the bet or lose in the case that you have lose it.
 
-### 3.2 If displaying a summary
+### 3.2 If setting a planned bet
 
-In the event that in the question of placing a bet, showing a summary or removing the algorithm you have pressed "2", the algorithm will display you a summary where you will view your total spending, total winnings, and the sports performance, also the console will display a message telling you which is the sport in which you win more, and its respective amount and also the sport in which you lose more. 
+In the case that you want to set a planned bet is the same escenario than in the first case but now you won't have to set the outcome as you don't know it.
+
+### 3.3 If displaying a summary
+
+In the event that in the question of placing a bet, showing a summary or removing the algorithm you have pressed "3", the algorithm will display you a summary where you will view your total spending, total winnings, the sports performance with a rank of the best from the best to the worst, the monthly limits, the risk overall which measures the risk of the amount bet according to your limits, also the console will display a message telling you which is the sport in which you win more, and its respective amount and also the sport in which you lose more. 
+
+### 3.4 How to set months limits.
+
+The algorithm has established monthly limits of 1000 for already finished bets and 500 for planned ones. If the user wants to establish other limits, they can do so at the end of the code by changing the value of the variables on line 124.
+
+## 4. Example
 
 
-## 4 Installation 
+
+## 5. Installation 
 
 The program provides two ways for visualizing the code that contains the bet tracker algorithm; from Google Collab or directly in Python.
 
@@ -72,7 +86,7 @@ Now, follow this steps to run it in google collab.
 -   Step 4: You will see on my drive page the download and you click on it.
 -   Step 5: Now you should be already on google collab placing your bets.
 
-  ## 5. Authors and contact
+  ## 6. Authors and contact
 
 -   Angel Benito  abenito.ieu2022@student.ie.edu
 -   Eloy Sanchez  esanchez.ieu2022@student.ie.edu
@@ -80,7 +94,7 @@ Now, follow this steps to run it in google collab.
 -   Enrique Roca de Togores  erocadetogor.ieu2022@student.ie.edu
 -   Juan Diaz  jdiazbernard.ieu2022@student.ie.edu
 
-  ## 6. Resources
+  ## 7. Resources
   
 For the project we have used the knowledge obtained through the algorithms course in IE University coursed by Alejandro Martinez. And also Chatgpt has helped us fixing bugs.
 
