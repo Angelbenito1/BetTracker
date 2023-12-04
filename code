@@ -54,32 +54,34 @@ class BetTracker:
                 return
 
             risk_factor = odds / 2
+            winnings=0
 
-            winnings = amount * odds
-            self.total_winnings += winnings
+          #  self.total_winnings += winnings
 
-            self.total_spending += amount - risk_factor
+            self.total_spending += amount
 
             outcome = input("Did you win or lose the bet (win/lose)? ")
 
             if outcome == 'win':
+                winnings = amount * odds
                 self.total_winnings += winnings
 
+
             if sport in self.sports_performance:
-                self.sports_performance[sport]['spending'] += amount - risk_factor
+                self.sports_performance[sport]['spending'] += amount
                 self.sports_performance[sport]['winnings'] += winnings
                 self.sports_performance[sport].setdefault('bets', []).append({
-                    'amount': amount - risk_factor,
+                    'amount': amount ,
                     'odds': odds,
                     'outcome': outcome,
                     'sport': sport
                 })
             else:
                 self.sports_performance[sport] = {
-                    'spending': amount - risk_factor,
+                    'spending': amount ,
                     'winnings': winnings,
                     'bets': [{
-                        'amount': amount - risk_factor,
+                        'amount': amount,
                         'odds': odds,
                         'outcome': outcome,
                         'sport': sport
@@ -112,10 +114,15 @@ class BetTracker:
                         ))
 
             max_winnings_sport = sorted_sports[0]
+
             max_losses_sport = max(self.sports_performance.items(), key=lambda x: x[1]['spending'] - x[1]['winnings'])
 
             print("\nSport with the Most Winnings: {}, Winnings: ${}".format(max_winnings_sport[0], max_winnings_sport[1]['winnings']))
-            print("Sport with the Most Losses: {}, Losses: ${}".format(max_losses_sport[0], max_losses_sport[1]['spending'] - max_losses_sport[1]['winnings']))
+            if max_losses_sport[1]['winnings'] - max_losses_sport[1]['spending'] >=0:
+              print("Your losess are 0")
+
+            else:
+              print("Sport with the Most Losses: {}, Losses: ${}".format(max_losses_sport[0], max_losses_sport[1]['winnings'] - max_losses_sport[1]['spending']))
 
         else:
             print("\nNo betting history available.")
