@@ -5,11 +5,10 @@ The BetTracker is a simple Python program designed to help users keep track of t
 1. [Objective](#Objective)
 2. [Features](#Features)
 3. [Usage](#Usage)
-4. [Example](#Example)
-5. [Installation](#Installation)
-6. [Authors](#Authors)
-7. [Resources](#Resources)
-8. [License](#License)
+4. [Installation](#Installation)
+5. [Authors](#Authors)
+6. [Resources](#Resources)
+7. [License](#License)
 
 ## 1. Objective
 
@@ -44,13 +43,7 @@ In the event that in the question of placing a bet, showing a summary or removin
 
 The algorithm has established monthly limits of 1000 for already finished bets and 500 for planned ones. If the user wants to establish other limits, they can do so at the end of the code by changing the value of the variables on line 124.
 
-## 4. Example
-
-[Code-Review_-Consistency-_-Improvements](https://github.com/Angelbenito1/BetTracker/assets/152195160/3cacbeb1-6ad3-40a0-86e7-76beeabed761)
-
-
-
-## 5. Installation 
+## 4. Installation 
 
 The program provides two ways for visualizing the code that contains the bet tracker algorithm; from Google Collab or directly in Python.
 
@@ -88,7 +81,7 @@ Now, follow this steps to run it in google collab.
 -   Step 4: You will see on my drive page the download and you click on it.
 -   Step 5: Now you should be already on google collab placing your bets.
 
-  ## 6. Authors and contact
+  ## 5. Authors and contact
 
 -   Angel Benito  abenito.ieu2022@student.ie.edu
 -   Eloy Sanchez  esanchez.ieu2022@student.ie.edu
@@ -96,7 +89,7 @@ Now, follow this steps to run it in google collab.
 -   Enrique Roca de Togores  erocadetogor.ieu2022@student.ie.edu
 -   Juan Diaz  jdiazbernard.ieu2022@student.ie.edu
 
-  ## 7. Resources
+  ## 6. Resources
   
 For the project we have used the knowledge obtained through the algorithms course in IE University coursed by Alejandro Martinez. And also Chatgpt has helped us fixing bugs.
 
